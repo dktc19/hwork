@@ -6,7 +6,9 @@ driver.get 'http://google.com'
 driver.manage.window.maximize
 #send_key
 search = driver.find_element(:xpath, "//input[@name='q']")
-search.send_keys "iTMS Coaching"
+search.send_key "iTMS Coaching"
+# giả lập thao tác nhấn enter để trang web tìm kiếm "iTMS Coaching", sau đó mới get được title của trang web khi đã tìm kiếm với gg
+search.send_keys :enter
 #get page title
 puts "Page Title is #{driver.title}"
 sleep 2
